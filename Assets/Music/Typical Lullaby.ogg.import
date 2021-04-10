@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Typical Lullaby.ogg-eda531045b4e94d00774d13528094867.oggstr"
+
+[deps]
+
+source_file="res://Assets/Music/Typical Lullaby.ogg"
+dest_files=[ "res://.import/Typical Lullaby.ogg-eda531045b4e94d00774d13528094867.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
