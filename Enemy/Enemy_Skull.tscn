@@ -1,0 +1,67 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://Enemy/Enemy_Skull.gd" type="Script" id=1]
+[ext_resource path="res://Assets/ gothicvania patreon collection/Fire-Skull-Files/PNG/fire-skull-no-fire.png" type="Texture" id=2]
+
+[sub_resource type="AtlasTexture" id=25]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 0, 0, 54, 70 )
+
+[sub_resource type="AtlasTexture" id=26]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 54, 0, 54, 70 )
+
+[sub_resource type="AtlasTexture" id=27]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 108, 0, 54, 70 )
+
+[sub_resource type="AtlasTexture" id=28]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 162, 0, 54, 70 )
+
+[sub_resource type="SpriteFrames" id=29]
+animations = [ {
+"frames": [ SubResource( 25 ), SubResource( 26 ), SubResource( 27 ), SubResource( 28 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=31]
+extents = Vector2( 10.7957, 9.26208 )
+
+[node name="Enemy_Skull" type="KinematicBody2D"]
+script = ExtResource( 1 )
+speed = 100
+looking_speed = 250
+
+[node name="Skull" type="AnimatedSprite" parent="."]
+position = Vector2( 427.919, 2275 )
+frames = SubResource( 29 )
+frame = 1
+playing = true
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+build_mode = 1
+polygon = PoolVector2Array( 423.847, 2255.05, 414.225, 2258.9, 409.816, 2266.12, 409.014, 2276.7, 411.82, 2282.47, 415.027, 2289.21, 415.428, 2298.83, 421.842, 2302.2, 426.252, 2304.12, 433.468, 2302.2, 440.684, 2297.87, 442.689, 2292.58, 440.684, 2285.84, 443.891, 2279.59, 448.301, 2273.82, 446.698, 2263.71, 443.891, 2256.5, 437.477, 2254.09 )
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+position = Vector2( 427.411, 2280.54 )
+rotation = 0.757473
+scale = Vector2( 10, 10 )
+enabled = true
+cast_to = Vector2( 0, 50 )
+
+[node name="Area2D" type="Area2D" parent="."]
+gravity_distance_scale = 448.264
+gravity_vec = Vector2( 600, 1200 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2( 427.357, 2275.41 )
+scale = Vector2( 2.2, 3.6 )
+shape = SubResource( 31 )
+[connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]

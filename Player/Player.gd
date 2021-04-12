@@ -8,14 +8,14 @@ var direction = 1
 
 export var gravity = Vector2(0,30)
 
-export var move_speed = 20
-export var max_move = 300
+export var move_speed = 60
+export var max_move = 100
 
-export var jump_speed = 100
-export var max_jump = 1000
+export var jump_speed = 300
+export var max_jump = 1200
 
-export var leap_speed = 100
-export var max_leap = 1000
+export var leap_speed = 300
+export var max_leap = 700
 
 var moving = false
 var is_jumping = false
@@ -69,6 +69,9 @@ func is_on_left_wall():
 	if $Wall/Right.is_colliding():
 		return true
 	return false
+	
+func do_damage(d):
+	queue_free()
 
 func get_right_collider():
 	return $Wall/Right.get_collider()
