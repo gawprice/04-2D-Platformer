@@ -11,3 +11,5 @@ func _physics_process(_delta):
 		player.position = spawn_location
 		player.name = "Player"
 		add_child(player)
+	
+		

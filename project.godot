@@ -16,8 +16,12 @@ _global_script_class_icons={
 [application]
 
 config/name="Template"
-run/main_scene="res://Levels/Level1.tscn"
+run/main_scene="res://Levels/LevelOne.tscn"
 config/icon="res://icon.png"
+
+[autoload]
+
+Global="*res://Global.gd"
 
 [display]
 
