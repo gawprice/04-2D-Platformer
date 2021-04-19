@@ -153,6 +153,7 @@ position = Vector2( 200, 200 )
 script = ExtResource( 9 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+scale = Vector2( 1.6, 1.6 )
 frames = SubResource( 15 )
 animation = "WallJump"
 playing = true

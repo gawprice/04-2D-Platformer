@@ -12,11 +12,11 @@ func _physics_process(_delta):
 	for i in get_slide_count():
 		var collision = get_slide_collision(i)
 		print (collision.collider.name)
-		if collision.collider.name == "Ground":
+		if collision.collider.name == "In_Box_Left":
 			$HellHound.flip_h = true
 			velocity.x = 0
 			direction *= -1
-		if collision.collider.name == "Platform":
+		if collision.collider.name == "In_Box_Right":
 			$HellHound.flip_h = false
 			velocity.x = 0
 			direction *= -1

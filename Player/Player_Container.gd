@@ -1,6 +1,6 @@
 extends Node2D
 
-export var spawn_location = Vector2(69,2600)
+export var spawn_location = Vector2(69,2500)
 onready var Player = load("res://Player/Player.tscn")
 
 
